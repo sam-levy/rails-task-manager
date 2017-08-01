@@ -1,0 +1,12 @@
+<h1>Edit Task</h1>
+
+<%= link_to tasks_path, class: 'btn btn-default btn-xs' do %>
+  <i class="fa fa-chevron-left" aria-hidden="true"></i> &nbsp;Voltar
+<% end %>
+<br><br>
+
+<div class="custom">
+  <%= form_for @task, url: {action: "update"} do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<h1>All Tasks</h1>
+
+<%= link_to new_task_path, class: 'btn btn-success btn-sm' do %>
+  <i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i> &nbsp;Task
+<% end %>
+
+<br><br>
+
+<div class="table-responsive custom">
+    <table class="table table-hover table-condensed">
+      <% @tasks.each do |task| %>
+      <tr>
+        <td>
+          <% if task.done %>
+          <i class="fa fa-check-square-o"></i>
+          <% else %>
+          <i class="fa fa-square-o"></i>
+          <% end %>
+        </td>
+        <td><%= link_to task.name, task_path(task) %></td>
+        <td><%= link_to 'Alterar', edit_task_path(task), class: 'btn btn-default btn-xs' %></td>
+        <td>
+          <%= link_to task, method: :delete, class: 'btn btn-danger btn-xs', data: { confirm: 'Deseja realmente remover o usuário?' } do %>
+          <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
