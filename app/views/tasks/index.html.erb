@@ -12,16 +12,16 @@
       <tr>
         <td>
           <% if task.done %>
-          <i class="fa fa-check-square-o"></i>
+            <i class="fa fa-check-square-o"></i>
           <% else %>
-          <i class="fa fa-square-o"></i>
+            <i class="fa fa-square-o"></i>
           <% end %>
         </td>
         <td><%= link_to task.name, task_path(task) %></td>
         <td><%= link_to 'Alterar', edit_task_path(task), class: 'btn btn-default btn-xs' %></td>
         <td>
           <%= link_to task, method: :delete, class: 'btn btn-danger btn-xs', data: { confirm: 'Deseja realmente remover o usuário?' } do %>
-          <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+            <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
           <% end %>
         </td>
       </tr>
